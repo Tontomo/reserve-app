@@ -1,12 +1,14 @@
 <!-- <div class="card-group"> -->
 <div class="row">
-    <div class="col-sm" *ngFor="let product of products;">
-        <a routerLink="detail">
+    <div class="col-sm" *ngFor="let product of products; let productId = index">
+        <!-- <a routerLink="detail"> -->
+        <!-- <a routerLink="{{ productId }}"> -->
+        <a [routerLink]="[ productId ]">
             <div class="card">
-                <img src=".\assets\img\image1.png" class="card-img-top" alt="...">
+                <img src="{{product.coverimage}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <!-- <h5 class="card-title">遠心1</h5> -->
-                    <p class="card-text">遠心{{ product }}の設定</p>
+                    <p class="card-text">{{ product.name }}の設定</p>
                     <!-- <a href="#" class="btn btn-primary">設定</a> -->
                 </div>
             </div>
